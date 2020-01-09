@@ -91,7 +91,7 @@
 					"phoneProche" => $this->input->post("phonepro")
 				);
 
-				if ($this->model_Patient->insererPatient($data)) {
+				if ($this->model_Patient->updatePatient($id,$data)) {
 					return redirect(base_url()."index.php/Patient/affichPatient");
 				}
 

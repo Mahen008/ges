@@ -2,13 +2,16 @@
 	
 	class model_Observation extends CI_Model
 	{
-		
-
-		public function AffichageObservation()
+		public function AjoutConsultation($dataa)
 		{
-			$affichObservation = $this->db->get("patient");
-			return $affichObservation->result();
+			$this->db->insert("observation",$dataa);
 		}
+
+		// public function AffichageObservation()
+		// {
+		// 	$affichObservation = $this->db->get("patient");
+		// 	return $affichObservation->result();
+		// }
 
 		public function suppObservation($id)
 		{
@@ -23,6 +26,17 @@
 			}
 		}
 
-	}
+		public function consultation($id)
+		{
+			$this->db->select(["patient.id","observation.idPatient","observation.idOb"]);
+			$this->db->from("observation");
+			$this->db->join("patient","patient.id=observation.idPatient");
+			// $this->db->where("id"=>$id);
+			$consult = $this->db->get();
+				return $consult->row();
 
+		}
+
+	}
+ 
 ?>

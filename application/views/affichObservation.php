@@ -40,22 +40,22 @@
 		                    </thead>
 		                    <tbody>
 
-		                    		<?php foreach($affichPat as $pe):?>
+		                    		<?php foreach($affichPatient as $pe):?>
 				                        <tr>
 				                      
 				                            <td><?php echo $pe->nom; ?></td>
 				                            <td><?php echo $pe->prenom; ?></td>
 				                           
 				                            <td>
-				                                 <div class="dropdown">
-													  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1em;">
+				                                <div class="dropdown">
+													<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1em;">
 													    Action
-													  </button>
-														  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-														    <a href="<?php echo base_url()?>index.php/Observation/AjoutObservation/<?php echo $pe->id; ?>" class="btn btn-success" role="button" style="font-size: 1em;">Consulter</a>
+													</button>
+														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+														    <a href="<?php echo base_url()?>index.php/Observation/affichagePat/<?php echo $pe->id; ?>" class="btn btn-success" role="button" style="font-size: 1em;">voir</a>
 				                                 			<a href="<?php echo base_url()?>index.php/Observation/deleteObservation/<?php echo $pe->id; ?>" class="btn btn-danger" role="button" style="font-size:1em;" onclick="return confirm('Voulez-vous vraiment supprimer')">Supprimer</a>
-														  </div>
-													</div>
+														</div>
+												</div>
 				                            </td>
 				                        </tr>
 			                    	<?php endforeach;?>

@@ -8,25 +8,45 @@
 			parent ::__construct();
 			$this->load->helper('url');
 			$this->load->model("model_Observation");
+			$this->load->model("model_Patient");
 			
 		}
 
 		//affichage 
-		public function affichObservation()
-		{
+		// public function affichObservation()
+		// {
 			
-			$affichPat = $this->model_Observation->AffichageObservation();
-			$this->load->view('affichObservation',['affichPat' => $affichPat]);
-		}
+		// 	$affichPat = $this->model_Observation->AffichageObservation();
+		// 	$this->load->view('affichObservation',['affichPat' => $affichPat]);
+		// }
 
-		public function AjoutObservation($id)
+		public function affichagePat($id)
 		{
 			$unPatientObs = $this->model_Observation->getPatientObs($id);
-			$this->load->view('AjoutObservation',['unPatientObs' => $unPatientObs]);
+			$this->load->view('affichagePat',['unPatientObs' => $unPatientObs]);
+		}
+
+		public function AjoutObs()
+		{
+			$affichPatient = $this->model_Patient->AffichagePatient();
+			$this->load->view('AjoutObs',['affichPatient' => $affichPatient]);
+		}
+
+		public function affichObservation()
+		{
+			$affichPatient = $this->model_Patient->AffichagePatient();
+			$this->load->view('affichObservation',['affichPatient' => $affichPatient]);
+		}
+
+		public function Affichconsult($id)
+		{
+			$cons = $this->observation_model->Affichconsult($id);
+			$this->load->view("affichage",['cons' => $cons]);
 		}
 		
 		public function AjoutConsultation()
 		{
+			$this->form_validation->set_rules("name","name","integer|required");
 			$this->form_validation->set_rules("nephro","nephro",);
 			$this->form_validation->set_rules("dateDiag","dateDiag");
 			$this->form_validation->set_rules("dateDebut","dateDebut");
@@ -71,6 +91,7 @@
 			if ($this->form_validation->run() == TRUE) {
 				//echo "marina";
 				$dataa = array(
+					"idPatient" => $this->input->post("name"),
 					"neuphroInit" => $this->input->post("nephro"),
 					"dateDiag" => $this->input->post("dateDiag"),
 					"debutHemo" => $this->input->post("dateDebut"),
@@ -108,30 +129,29 @@
 					"statAgeCMV" => $this->input->post("statutAgeCMV"),
 					"DatAgeEBV" => $this->input->post("DateAgeEBV"),
 					"statAgeEBV" => $this->input->post("statutAgeEBV")
+														
 				);
 
-				if (!$this->Abonne_model->AjoutAbonne($dataa)) {
-					$this->session->set_flashdata("message","la consultation n'est pas ajouté");
-	
+				if ($this->model_Observation->AjoutConsultation($dataa)){
+					$this->session->set_flashdata("message","la consultation a été ajouté");
 				} 
 				else 
 				{
-					$this->session->set_flashdata("message","la consultation a été ajouté");
+					$this->session->set_flashdata("message","la consultation n'est pas ajouté");
 				}
 
 				//return redirect(base_url()."abonne/ajouAbonne");
-				return redirect(base_url()."index.php/Observation/affichObservation");
+				return redirect(base_url()."index.php/Observation/AjoutObs");
 			} 
 			else {
-				$this->AjoutObservation();// MISEJ+HO L ERREUUR menamena
+				$this->AjoutObs();// MISEJ+HO L ERREUUR menamena
 				//echo validation_errors();
 				/*mapseho n 
 				The Code du Abonne field is required.
 				The Libellé field is required.
 				*/
-
 			}
-			
+
 		}
 
 
