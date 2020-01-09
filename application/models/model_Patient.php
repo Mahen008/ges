@@ -29,6 +29,7 @@
 			return $this->db->where('id',$id)
 							->update('patient',$data);
 		}
+		
 
 		//supprimer une patient 
 		public function suppPatient($id)

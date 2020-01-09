@@ -20,10 +20,10 @@
 		// 	$this->load->view('affichObservation',['affichPat' => $affichPat]);
 		// }
 
-		public function affichagePat($id)
+		public function voirPat($id)
 		{
 			$unPatientObs = $this->model_Observation->getPatientObs($id);
-			$this->load->view('affichagePat',['unPatientObs' => $unPatientObs]);
+			$this->load->view('voirPat',['unPatientObs' => $unPatientObs]);
 		}
 
 		public function AjoutObs()
@@ -32,10 +32,10 @@
 			$this->load->view('AjoutObs',['affichPatient' => $affichPatient]);
 		}
 
-		public function affichObservation()
+		public function affichListPat()
 		{
 			$affichPatient = $this->model_Patient->AffichagePatient();
-			$this->load->view('affichObservation',['affichPatient' => $affichPatient]);
+			$this->load->view('affichListPat',['affichPatient' => $affichPatient]);
 		}
 
 		public function Affichconsult($id)
@@ -166,7 +166,7 @@
 		public function deleteObservation($id)
 		{
 			if ($this->model_Observation->suppObservation($id)) {
-				return redirect("index.php/Observation/affichObservation");
+				return redirect("index.php/Observation/affichListPat");
 			}
 		}
 	}
