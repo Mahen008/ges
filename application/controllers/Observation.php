@@ -20,11 +20,6 @@
 		// 	$this->load->view('affichObservation',['affichPat' => $affichPat]);
 		// }
 
-		public function voirPat($id)
-		{
-			$unPatientObs = $this->model_Observation->getPatientObs($id);
-			$this->load->view('voirPat',['unPatientObs' => $unPatientObs]);
-		}
 
 		public function AjoutObs()
 		{
@@ -105,7 +100,7 @@
 
 					"acceVasc" => $this->input->post("vasc"),
 					"pose" => $this->input->post("pose"),
-					"1erUse" => $this->input->post("1ereUtil"),
+					"PremiereUse" => $this->input->post("1ereUtil"),
 					"Arret" => $this->input->post("Aablation"),
 					"coms" => $this->input->post("coms"),
 

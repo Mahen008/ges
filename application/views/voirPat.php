@@ -41,7 +41,7 @@
 				<label>Numéro téléphone : <?php echo set_value('phone',$affichConsult->phone);?></label>
 			</div>
 			<div class="box" >
-				<label>Age : </label>
+				<label>Age :  <?php echo set_value('ddn',$affichConsult->age);?></label>
 			</div>
 			<div class="box" >
 				<label>Prenom : <?php echo set_value('fname',$affichConsult->prenom);?></label><br>
@@ -69,36 +69,29 @@
 					    
 					      <tr>
 					        <td>
-					        	<input list="select" class="form-control" name="nephro">
-										<datalist id="select">    
-										  <option value="NEUPHROPATHIE DIABETIQUE"/>
-										  <option value="NEUPHROPATHIE SELEROSE"/>
-										</datalist>
-										<span class="text-danger"><?php echo form_error("nephro");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->neuphroInit);?>
 							</td>
-					        <td><input type="Date" name="dateDiag" class="form-control">
-					        <span class="text-danger"><?php echo form_error("dateDiag");?></span></td>
-
-					        <td><input type="Date" name="dateDebut" class="form-control"><span class="text-danger"><?php echo form_error("dateDebut");?></span></td>
-
-					        <td><input type="text" name="hist" class="form-control"><span class="text-danger"><?php echo form_error("hist");?></span></td>
-
-					        <td><input list="ant" name="ant" class="form-control">
-					        	<datalist id="ant">    
-								  <option value="HTA"/>
-								  <option value="DIABETE"/>
-								</datalist>
-								<span class="text-danger"><?php echo form_error("ant");?></span>
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->dateDiag);?>
 					        </td>
 
-					        <td><input type="text" name="como" class="form-control"><span class="text-danger"><?php echo form_error("como");?></span></td>
 					        <td>
-								<select list="Etat" type="" name="Etat" class="form-control">		       		
-					        		<option value="BEG">BEG</option>
-					        		<option value="ABEG">ABEG</option>
-					        		<option value="AEG">AEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("Etat");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->debutHemo);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->histMaladie);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->Antecedents);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->Comorbidites);?>
+					        </td>
+					        <td>
+								<?php echo set_value('ddn',$affichConsult->etatGenAct);?>
 					        </td>
 					      </tr>
 					      
@@ -114,31 +107,16 @@
 					  	<tbody>
 
 					  		<td>
-					  			<label class="custom-control custom-checkbox">OUI
-								  <input type="radio" name="attenteGre" value="OUI">
-								  <span class="checkmark"></span>
-								</label>
-								<label class="custom-control custom-checkbox">NON
-								  <input type="radio" checked="checked" name="attenteGre" value="NON">
-								  <span class="checkmark"></span>
-								</label>
-					  			<span class="text-danger"><?php echo form_error("attenteGre");?></span>
+					  			<?php echo set_value('ddn',$affichConsult->attenteGref);?>
 					  		</td>
 
 					  		<td>
-					  			<select list="groupSan" type="" name="groupSan" class="form-control">		       		
-					        		<option value="A+">A+</option>
-					        		<option value="B+">B+</option>
-					        		<option value="AB+">AB+</option>
-					        		<option value="O+">O+</option>
-					        		<option value="A-">A-</option>
-					        		<option value="B-">B-</option>
-					        		<option value="AB-">BEG</option>
-					        		<option value="O-">ABEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("groupSan");?></span></td>
+					  			<?php echo set_value('ddn',$affichConsult->groupSang);?>	
+					  		</td>
 
-					  		<td><input type="text" name="allergie" class="form-control"><span class="text-danger"><?php echo form_error("allergie");?></span></td>
+					  		<td>
+					  			<?php echo set_value('ddn',$affichConsult->allergies);?>
+					  		</td>
 					  	</tbody>
 					  </table>
 
@@ -158,27 +136,23 @@
 					    
 					      <tr>
 					        <td>
-								<select list="Etat" type="" name="vasc" class="form-control">		       		
-					        		<option value="KT_fG">KT femorale Gauche</option>
-					        		<option value="KT_fD">KT femorale Droite</option>
-					        		<option value="KT_jG">KT jigulaire Gauche</option>
-					        		<option value="KT_jD">KT jigulaire Droite</option>	
-					        		<option value="KT_jigTun">KT jigulaire tunneliser</option>
-					        		<option value="KT_jigCan">KT jigulaire canau</option>
-					        		<option value="FAVG">FAV Gauche</option>
-					        		<option value="FAVD">FAV Droite</option>
-					        		<option value="radCephPr">radio cephalique proximal</option>
-					        		<option value="brBr">branchio branchiale</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("vasc");?></span>
+								<?php echo set_value('ddn',$affichConsult->acceVasc);?>
 							</td>
-					        <td><input type="Date" name="pose" class="form-control"><span class="text-danger"><?php echo form_error("pose");?></span></td>
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->pose);?>
+					        </td>
 
-					        <td><input type="Date" name="1ereUtil" class="form-control"><span class="text-danger"><?php echo form_error("1ereUtil");?></span></td>
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->PremiereUse);?>
+					        </td>
 
-					        <td><input type="Date" name="Aablation" class="form-control"><span class="text-danger"><?php echo form_error("Aablation");?></span></td>
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->Arret);?>
+					        </td>
 
-					        <td><input type="text" name="coms" class="form-control"><span class="text-danger"><?php echo form_error("coms");?></span></td>
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->coms);?>
+					        </td>
 					      </tr>
 					      
 					    </tbody>
@@ -214,108 +188,87 @@
 					      <tr>
 					        <td>SELEROSE</td>
 
-					        <td><input type="Date" name="DateSerVHC" class="form-control"></td>
-					        <span class="text-danger"><?php echo form_error("DateSerVHC");?></span>
 					        <td>
-
-					        	<select class="form-control" name="statutSerVHC">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutSerVHC");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->DatSerVHC);?>
+					        <td>
+								<?php echo set_value('ddn',$affichConsult->statSerVHC);?>
 					        </td>
 
-					        <td><input type="Date" name="DateSerVBH" class="form-control"><span class="text-danger"><?php echo form_error("DateSerVBH");?></span></td>
-
 					        <td>
-					        	<select class="form-control" name="statutSerVBH">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutSerVBH");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->DatSerVBH);?>
 					        </td>
 
-					        <td><input type="Date" name="DateSerHIV" class="form-control"><span class="text-danger"><?php echo form_error("DateSerHIV");?></span></td>
-
 					        <td>
-					        	<select class="form-control" name="statutSerHIV">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutSerHIV");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->statSerVBH);?>
 					        </td>
 
-					        <td><input type="Date" name="DateSerCMV" class="form-control"><span class="text-danger"><?php echo form_error("DateSerCMV");?></span></td>
-
 					        <td>
-					        	<select class="form-control" name="statutSerCMV">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutSerCMV");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->DatSerHIV);?>
 					        </td>
 
-					        <td><input type="Date" name="DateSerEBV" class="form-control"><span class="text-danger"><?php echo form_error("DateSerEBV");?></span></td>
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->statSerHIV);?>
+					        </td>
 
 					        <td>
-					        	<select class="form-control" name="statutSerEBV">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutSerEBV");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->DatSerCMV);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->statSerCMV);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->DatSerEBV);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->statSerEBV);?>
 					        </td> 
 					      </tr>
 
 					      <tr>
 					      	<td>Age</td>
-					      	<td><input type="Date" name="DateAgeVHC" class="form-control"><span class="text-danger"><?php echo form_error("DateAgeVHC");?></span></td>
+
+					      	<td>
+					      		<?php echo set_value('ddn',$affichConsult->DatAgeVHC);?>
+					      	</td>
 
 					        <td>
-					        	<select class="form-control" name="statutAgeVHC">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutAgeVHC");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->statAgeVHC);?>
 					        </td>
 
-					        <td><input type="Date" name="DateAgeVHB" class="form-control"><span class="text-danger"><?php echo form_error("DateAgeVHB");?></span></td>
-
 					        <td>
-					        	<select class="form-control" name="statutAgeVHB">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutAgeVHB");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->DatAgeVHB);?>
 					        </td>
 
-					        <td><input type="Date" name="DateAgeHIV" class="form-control"><span class="text-danger"><?php echo form_error("DateAgeHIV");?></span></td>
-
 					        <td>
-					        	<select class="form-control" name="statutAgeHIV">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutAgeHIV");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->statAgeVHB);?>
 					        </td>
 
-					        <td><input type="Date" name="DateAgeCMV" class="form-control"><span class="text-danger"><?php echo form_error("DateAgeCMV");?></span></td>
-
 					        <td>
-					        	<select class="form-control" name="statutAgeCMV">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutAgeCMV");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->DatAgeHIV);?>
+					        	
 					        </td>
 
-					        <td><input type="Date" name="DateAgeEBV" class="form-control"><span class="text-danger"><?php echo form_error("DateAgeEBV");?></span></td>
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->statAgeHIV);?>
+					        </td>
 
 					        <td>
-					        	<select class="form-control" name="statutAgeEBV">
-					        		<option value="">POS</option>
-					        		<option value="">NEG</option>
-					        	</select>
-					        	<span class="text-danger"><?php echo form_error("statutAgeEBV");?></span>
+					        	<?php echo set_value('ddn',$affichConsult->DatAgeCMV);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->statAgeCMV);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->DatAgeEBV);?>
+					        </td>
+
+					        <td>
+					        	<?php echo set_value('ddn',$affichConsult->statAgeEBV);?>
 					        </td>
 					      </tr>
 					      

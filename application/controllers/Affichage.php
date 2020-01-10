@@ -8,11 +8,11 @@
 				$this->load->model('model_Affichage');
 			}
 		
-		// public function voirPat($id)
-		// {
-		// 	$unPatientObs = $this->model_Observation->getPatientObs($id);
-		// 	$this->load->view('voirPat',['unPatientObs' => $unPatientObs]);
-		// }
+		public function voirPat($id)
+		{
+			$unPatientObs = $this->model_Observation->getPatientObs($id);
+			$this->load->view('voirPat',['unPatientObs' => $unPatientObs]);
+		}
 
 		public function ficheMedical($id)
 		{
