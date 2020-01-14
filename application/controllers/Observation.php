@@ -30,6 +30,7 @@
 		public function affichListPat()
 		{
 			$affichPatient = $this->model_Patient->AffichagePatient();
+			// $consultPat= $this->model_Observation->consultation($id);
 			$this->load->view('affichListPat',['affichPatient' => $affichPatient]);
 		}
 
@@ -55,7 +56,7 @@
 
 			$this->form_validation->set_rules("vasc","vasc",);
 			$this->form_validation->set_rules("pose","vasc",);
-			$this->form_validation->set_rules("1ereUtil","1ereUtil");
+			$this->form_validation->set_rules("PremiereUtil","PremiereUtil");
 			$this->form_validation->set_rules("Aablation","Aablation");
 			$this->form_validation->set_rules("coms","coms",);
 
@@ -100,7 +101,7 @@
 
 					"acceVasc" => $this->input->post("vasc"),
 					"pose" => $this->input->post("pose"),
-					"PremiereUse" => $this->input->post("1ereUtil"),
+					"PremiereUse" => $this->input->post("PremiereUtil"),
 					"Arret" => $this->input->post("Aablation"),
 					"coms" => $this->input->post("coms"),
 
@@ -150,10 +151,10 @@
 		}
 
 
-		public function editPatientObs($id)
+		public function editObs($id)
 		{
-			$unPatientOb = $this->model_Observation->getPatientObs($id);
-			$this->load->view('editPatientObs',['unPatientOb' => $unPatientOb]);
+			$unObs = $this->model_Observation->getObs($id);
+			$this->load->view('editObs',['unObs' => $unObs]);
 		}
 
 		

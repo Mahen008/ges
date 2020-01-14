@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -53,6 +54,7 @@
 													</button>
 														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 														    <a href="<?php echo base_url()?>index.php/Affichage/ficheMedical/<?php echo $pe->id; ?>" class="btn btn-success" role="button" style="font-size: 1em;">voir</a>
+														    <a href="<?php echo base_url()?>index.php/Observation/editObs/<?php echo $pe->id; ?>" class="btn btn-success" role="button" style="font-size: 1em;">Modifier</a>
 				                                 			<a href="<?php echo base_url()?>index.php/Observation/deleteObservation/<?php echo $pe->id; ?>" class="btn btn-danger" role="button" style="font-size:1em;" onclick="return confirm('Voulez-vous vraiment supprimer')">Supprimer</a>
 														</div>
 												</div>

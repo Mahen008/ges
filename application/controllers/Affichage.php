@@ -6,6 +6,7 @@
 			{
 				parent :: __construct();
 				$this->load->model('model_Affichage');
+				$this->load->model('model_Observation');
 			}
 		
 		public function voirPat($id)
@@ -16,9 +17,9 @@
 
 		public function ficheMedical($id)
 		{
-			$affichConsult = $this->model_Affichage->fichMedical($id);
-
-			$this->load->view('voirPat',['affichConsult' => $affichConsult]);
+			$affichPatient = $this->model_Observation->affichList();
+			$affichCons = $this->model_Affichage->fichMedical($id);
+			$this->load->view('ficheMedical',['affichCons' => $affichCons]);
 		}
 
 		
