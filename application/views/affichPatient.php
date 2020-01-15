@@ -5,10 +5,14 @@
 	</head>
 <body>
 	<?php include("include/header.php");?>
+	<?php include("include/headerApp.php");?>
+	<?php include("include/sidebar.php");?>
+
+
 	<div id="container">
 		<div id="wrapper">
-				<!-- <?php include("include/sidebar.php");?> -->
-			<div id="page-content-wrapper" style="margin-left: 120px;width: 1140px;">
+	
+			<div id="page-content-wrapper" style="margin-left: 210px; margin-top: 30px; width: 1159px;">
            
 	           <!-- debut card-->
 	            <div class="card">
@@ -21,8 +25,10 @@
 	                <div class="card-body">
 	                	<!-- debut container-fluid-->
 	                    <div class="container-fluid">
-	                    	
-	                <button class="btn btn-primary active" data-toggle="modal" data-target="#exampleModalLong" style="margin-bottom: 7px;">Ajouter</button>
+
+	                <div class="col-sm-8 col-9 text-right m-b-20" style="margin-left: 30%; margin-top: 0px;">
+                        <a data-toggle="modal" data-target="#exampleModalLong" class="btn btn btn-primary btn-rounded float-right active"><i class="fa fa-plus"></i>Add Patient</a>
+                    </div>
 
 		                 <!-- Modal ajout article -->
 		                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -117,22 +123,29 @@
 		                    		<?php foreach($affichPat as $pe):?>
 				                        <tr>
 				                     
-				                            <td><?php echo $pe->nom; ?></td>
+				                            <td><img width="28" height="28" src="<?php echo base_url()?>assets/img/user.jpg" class="rounded-circle m-r-5" alt=""><?php echo $pe->nom; ?></td>
 				                            <td><?php echo $pe->prenom; ?></td>
 				                            <td><?php echo $pe->adresse; ?></td>
 				                            <td><?php echo $pe->DDN; ?></td>
 				                            <td><?php echo $pe->phone; ?></td>
 				                            <td><?php echo $pe->phoneProche; ?></td>
 				                            <td>
-				                                 <div class="dropdown">
-													  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1em;">
+				                                <div class="dropdown">
+													<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1em;">
 													    Action
-													  </button>
-														  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-														    <a href="<?php echo base_url()?>index.php/Patient/editPatient/<?php echo $pe->id; ?>" class="btn btn-success" role="button" style="font-size: 1em;">Modifier</a>
-				                                 			<a href="<?php echo base_url()?>index.php/Patient/deletePatient/<?php echo $pe->id; ?>" class="btn btn-danger" role="button" style="font-size:1em;" onclick="return confirm('Voulez-vous vraiment supprimer')">Supprimer</a>
-														  </div>
-													</div>
+													</button>
+														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+														    <a href="<?php echo base_url()?>index.php/Patient/editPatient/<?php echo $pe->id; ?>" class="btn btn-success" role="button" style="font-size: 1em;"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+				                                 			<a href="<?php echo base_url()?>index.php/Patient/deletePatient/<?php echo $pe->id; ?>" class="btn btn-danger" role="button" style="font-size:1em;" onclick="return confirm('Voulez-vous vraiment supprimer')"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+														</div>
+												</div>
+												<!-- <div class="dropdown dropdown-action">
+												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+												<div class="dropdown-menu dropdown-menu-right">
+													<a class="dropdown-item" href="edit-patient.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
+													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_patient"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+												</div> -->
+											</div>
 				                            </td>
 				                        </tr>
 			                    	<?php endforeach;?>
@@ -153,5 +166,7 @@
 		</div>
 		<!-- fin wrapper -->
 	</div>
+	
+	<?php include("include/footer.php");?>
 </body>
 </html>

@@ -12,26 +12,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/AdminLTE.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/DataTables/dataTables.bootstrap4.min.css">
-    
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url()?>assets/img/favicon.ico">
+  <title>Gasikara Exploration Srevice</title>
+  <link href="<?php echo base_url()?>assets/css/icon.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/font-awesome.min.css">
     
 </head>
 
 <body>
-    <!-- menu de l'application-->
-    <div>
-        
-    </div>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/DataTables/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/DataTables/dataTables.bootstrap4.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>assets/popper.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-        $("#table_datatable").DataTable();
-      });
-      
-    </script>
+    
 
 </body>
 </html>
