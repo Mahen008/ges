@@ -5,23 +5,29 @@
 	</head>
 <body>
 	<?php include("include/header.php");?>
-	<div class="container">
-		<!-- <?php include("include/sidebar.php");?> -->
+	<?php include("include/headerApp.php");?>
+	<?php include("include/sidebar.php");?>
 
+	
+	<div class="content">
 		<div class="row">
-			<div class="col-sm-4" style="margin-left: 200px;">
+			<div class="col-lg-8 offset-lg-2" style="margin-top: 60px;">
+                        <h4 class="page-title">Modifier Patient</h4>
+                    </div>
+			<div class="col-sm-4" style="margin-left: 400px; margin-top: 0px;">
 				<?php if($msg = $this->session->flashdata('message')): ?>
-					<div class="btn-primary" style="line-height: 30px;" align="center">
+					<div class="btn-primary" style="line-height: 10px;" align="center">
 						<?php echo $msg;?>
 					</div>
 				<?php endif; ?>
 
-				<form method="post" action="<?php echo base_url()?>index.php/Patient/updatePatient/<?php echo $unPatient->id;?>" style="margin-top: 20px;">
+				<form method="post" action="<?php echo base_url()?>index.php/Patient/updatePatient/<?php echo $unPatient->id;?>" style="margin-top: 10px;">
 				<div class="form-group">
 					<label>Nom</label>
 					<input type="text" name="name" class="form-control" value="<?php echo set_value('name',$unPatient->nom);?>">
 					<span class="text-danger"><?php echo form_error("name");?></span>
 				</div>
+
 
 				<div class="form-group">
 					<label>Prenom</label>
@@ -59,6 +65,8 @@
 			</div>
 
 		</div>
+		<!-- </div> -->
 	</div>
+	<?php include("include/footer.php");?>
 </body>
 </html>

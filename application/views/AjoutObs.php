@@ -28,14 +28,18 @@
 	</style>
 <body>
 	<?php include("include/header.php");?>
-	
-	<h3>OBSERVATION MEDICAL</h2>
+ 	<?php include("include/headerApp.php");?>
+	<!-- <?php include("include/sidebar.php");?>
+	 -->
+	<h3 style="margin-top: 70px;">OBSERVATION MEDICAL</h2>
 	<h4>ETAT CIVIL</h4>
+	<div id="container">
+		<!-- debut wrapper -->
+		<div id="wrapper">
 
 		<form method="post" action="<?php echo base_url()?>index.php/Observation/AjoutConsultation">
 			
 			<div class="container">
-		<!-- <?php include("include/sidebar.php");?> -->
 		
 				<div class="box">
 					<label class="form-group">Nom</label>
@@ -203,7 +207,7 @@
 							</td>
 					        <td><input type="Date" name="pose" class="form-control"><span class="text-danger"><?php echo form_error("pose");?></span></td>
 
-					        <td><input type="Date" name="1ereUtil" class="form-control"><span class="text-danger"><?php echo form_error("1ereUtil");?></span></td>
+					        <td><input type="Date" name="PremiereUtil" class="form-control"><span class="text-danger"><?php echo form_error("PremiereUtil");?></span></td>
 
 					        <td><input type="Date" name="Aablation" class="form-control"><span class="text-danger"><?php echo form_error("Aablation");?></span></td>
 
@@ -359,13 +363,18 @@
 					    </tbody>
 					  </table>
 					  <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Ajouter</button>
-						<a href="<?php echo base_url()?>index.php/Observation/affichObservation" class="btn btn-success"><span class="glyphicon glyphicon-step-backward"></span> Retour</a>
+						<a href="<?php echo base_url()?>index.php/Observation/affichListPat" class="btn btn-success"><span class="glyphicon glyphicon-step-backward"></span> Retour</a>
 						
 				    </div>
 				  </div>
+				</div>
+
 			  			
 				</form>
+				</div>
 			</div>
+			</div>
+			<?php include("include/footer.php");?>
 			<script>
 				$(document).ready(function(){
 				  $(".nav-tabs a").click(function(){
@@ -375,5 +384,6 @@
 				
 			      
 			</script>
+
 </body>
 </html>

@@ -17,8 +17,8 @@
 	           <!-- debut card-->
 	            <div class="card">
 
-	                <div class="card-header" style="background-color: #367fa9;height: 50px;">
-	                    <h2 align="center" style="color: #fff;font-size: 1em;">LISTE DE PATIENT</h2>
+	                <div class="card-header" style="background-color: #ecefed;height: 50px;">
+	                    <h2 align="center" style="color: #000;font-size: 1.5em;">LISTE DE PATIENT</h2>
 	                </div>
 
 	                <!-- debut card body-->

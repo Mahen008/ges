@@ -11,8 +11,7 @@
       
     </script>
 
-<div class="sidebar-overlay" data-reff=""></div>
-    
+    <div class="sidebar-overlay" data-reff=""></div>    
 	<script src="<?php echo base_url()?>assets/js/popper.min.js"></script>
     <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url()?>assets/js/jquery.slimscroll.js"></script>
