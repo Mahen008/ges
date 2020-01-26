@@ -1,57 +1,3 @@
-/*
-Author       : Dreamguys
-Template Name: PreClinic - Medical and Hospital Admin Template
-Version      : 1.0
-*/
-
-/*============================
- [Table of CSS]
-
-1. General
-2. Table
-3. Helper Class
-4. Bootstrap Classes
-5. Header
-6. Sidebar
-7. Content
-8. Login
-9. Dashboard
-10. Activity
-11. Select2
-12. Nav tabs
-13. Holidays
-14. Edit Profile
-15. Chat
-16. Focus Label
-17. Leave
-18. Employee
-19. Events
-20. Profile
-21. Notifications
-22. Roles & Permissions
-23. Chat Right Sidebar
-24. Invoice
-25. Doctors
-26. Add Doctor
-27. Payslip
-28. Attendance
-29. Inbox
-30. Mail View
-31. Blog
-32. Blog View
-33. UI Kit
-34. Error
-35. Lock Screen
-36. Voice call
-37. Video Call
-38. Incoming call
-39. Notification settings
-40. Chat Sidebar
-41. Gallery
-42. Responsive
-
-========================================*/
-
 /*-----------------
 	1. General
 -----------------------*/
@@ -63,8 +9,7 @@ html {
 body {
 	font-family: 'Rubik', sans-serif;
 	font-size: 0.875rem;
-	color: #666;
-	background-color: #fafafa;
+	
 	overflow-x: hidden;
 	height: 100%;
 }
@@ -168,47 +113,6 @@ textarea.form-control {
 .list-group-item {
 	border: 1px solid #eaeaea;
 }
-
-/*-----------------
-	2. Table
------------------------*/
-
-/*.table {
-	color: #000;
-	border: 1px solid #f0f0f0;
-}
-.table.table-white {
-	background-color: #fff;
-}
-.table > tbody > tr > td {
-	font-weight: 300;
-}
-.table-striped > tbody > tr:nth-of-type(2n + 1) {
-	background-color: #f6f6f6;
-}
-table.table td .avatar {
-	margin: 0 5px 0 0;
-}
-table.table td h2 {
-	display: inline-block;
-	font-size: inherit;
-	font-weight: 400;
-	margin: 0;
-	padding: 0;
-	vertical-align: middle;
-}
-table.table td h2 a {
-	color: #757575;
-}
-table.table td h2 a:hover {
-	color: #009efb;
-}
-table.table td h2 span {
-	color: #9e9e9e;
-	display: block;
-	font-size: 12px;
-	margin-top: 3px;
-}*/
 
 /*-----------------
 	3. Helper Class
@@ -688,8 +592,7 @@ textarea.form-control {
 	vertical-align: middle;
 }
 .table h5 + p {
-	color: #9e9e9e;
-	font-size: 14px;
+	font-size: 1.9em;;
 	line-height: 18px;
 	margin-bottom: 0;
 }
@@ -982,10 +885,10 @@ textarea.form-control {
 	line-height: 18px;
 	top: 15px;
 }
-#sidebar-menu .menu-arrow:before {
+#sidebar-menu #menu-arrow:before {
 	content: "\f105";
 }
-#sidebar-menu li a.subdrop .menu-arrow {
+#sidebar-menu li a.subdrop #menu-arrow {
 	-ms-transform: rotate(90deg);
 	-webkit-transform: rotate(90deg);
 	-o-transform: rotate(90deg);
@@ -1348,16 +1251,16 @@ ul.chat-user-total li i.old-users {
 	margin: 0;
 	color: #333;
 }
-.custom-table tr {
+#custom-table tr {
 	background-color: #fff;
 	box-shadow: 0 0 3px #e5e5e5;
 }
-.table.custom-table > tbody > tr > td,
-.table.custom-table > tbody > tr > th,
-.table.custom-table > tfoot > tr > td,
-.table.custom-table > tfoot > tr > th,
-.table.custom-table > thead > tr > td,
-.table.custom-table > thead > tr > th {
+.table#custom-table > tbody > tr > td,
+.table#custom-table > tbody > tr > th,
+.table#custom-table > tfoot > tr > td,
+.table#custom-table > tfoot > tr > th,
+.table#custom-table > thead > tr > td,
+.table#custom-table > thead > tr > th {
 	padding: 10px 8px;
 	vertical-align: middle;
 }
@@ -2596,7 +2499,7 @@ a.fc-event:not([href]) {
 .fc-toolbar .ui-state-hover {
 	z-index: 0;
 }
-.fc th.fc-widget-header {
+.fc .fc-widget-header {
 	background: #000;
 	font-size: 14px;
 	line-height: 20px;
@@ -3423,9 +3326,7 @@ a.status-grey {
 .table-inbox tr {
 	cursor: pointer;
 }
-table.table-inbox tbody tr.checked {
-	background-color: #ffffcc;
-}
+
 .mail-label {
 	margin-right: 5px;
 }
@@ -4914,204 +4815,3 @@ blockquote p {
 		margin-bottom: 10px;
 	}
 }
-
-
-/* menu de la navigation */
-.navbar .navbar-nav{
-	margin: 0 auto;
-}
-.navbar .nav-item a{
-	color: #fff;
-	font-size: 1.4em;
-}
-
-.navbar form button{
-	background-color: #008d4c;
-	color: #fff;
-	border: 0;
-}
-
-.navbar form button a{
-	text-decoration: none;
-	color: #fff;
-}
-
-.navbar-brand img{
-	height: 75px;
-	color: #fff;
-}
-
-.naviko{
-	margin-top: 5px;
-}
-
-
-.card select{
-	margin-bottom: 20px;
-}
-
-/*menu @ sisiny */
-
-.main-sidebar{
-    /*background-color: #222d32;*/
- }
-
-.sidebar .sidebar-menu li a {
-    color: #fff;
-    text-align: left;
-    padding-left: 50px;
-}
-
-.sidebar #sidebar-menu li a:hover {
-    background-color: #367fa9;
-    color: #fff;    
-}
-
-
-#th,#td,#label{
-	font-size: 0.8em;
-}
-
-aside{
-	position: fixed;
-}
-
-.card h2 {
-	font-size: 1em;
-}
-
-.btn a{
-	font-size: 0.8em;
-	color: #fff;
-}
-
-.btn a:hover{
-	font-size: 0.8em;
-	color: #fff;
-}
-
-.container{
-		display: flex;
-		flex-direction: row-reverse;
-
-}
-
-h3{
-	text-align: center;
-}
-
-h4{
-	display: inline-block;
-	position: relative;
-	left: 20%;
-}
-
-.table{
-	width:95%;
-	height:10px;
-	margin-left: 2.5%;
-}
-
-
-/*.tableau{
-	display: inline-block;
-	position: fixed;
-	left: 0%;
-}
-*/
-
-/* menu de la navigation */
-.navbar .navbar-nav{
-	margin: 0 auto;
-}
-.navbar .nav-item a{
-	color: #fff;
-	font-size: 1.4em;
-}
-
-.navbar form button{
-	background-color: #008d4c;
-	color: #fff;
-	border: 0;
-}
-
-.navbar form button a{
-	text-decoration: none;
-	color: #fff;
-}
-
-.navbar-brand img{
-	height: 75px;
-	color: #fff;
-}
-
-.naviko{
-	margin-top: 5px;
-}
-
-#th{
-	color: #fff;
-}
-
-.card select{
-	margin-bottom: 20px;
-}
-
-/*menu @ sisiny */
-
-.main-sidebar{
-    /*background-color: #222d32;*/
- }
-
-.sidebar .sidebar-menu li a {
-    color: #fff;
-    text-align: left;
-    padding-left: 50px;
-}
-
-.sidebar .sidebar-menu li a:hover {
-    background-color: #000;
-    color: #fff;    
-}
-
-aside{
-	position: fixed;
-}
-
-.card h2 {
-	font-size: 1em;
-}
-
-.btn a{
-	font-size: 0.8em;
-	color: #fff;
-}
-
-.btn a:hover{
-	font-size: 0.8em;
-	color: #fff;
-}
-
-.container{
-		display: flex;
-		flex-direction: row-reverse;
-
-}
-
-h3{
-	text-align: center;
-}
-
-h4{
-	display: inline-block;
-	position: relative;
-	left: 20%;
-}
-
-.table{
-	width:95%;
-	height:10px;
-	margin-left: 2.5%;
-}
-
-

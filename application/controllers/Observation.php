@@ -9,9 +9,10 @@
 			$this->load->helper('url');
 			$this->load->model("model_Observation");
 			$this->load->model("model_Patient");
+			$this->load->model("model_Affichage");
 			
 		}
-
+ 
 		//affichage 
 		// public function affichObservation()
 		// {
@@ -150,19 +151,13 @@
 
 		}
 
-
-		public function editObs($id)
-		{
-			$unObs = $this->model_Observation->getObs($id);
-			$this->load->view('editObs',['unObs' => $unObs]);
-		}
-
+		
 		
 		//supprimer une Observation
 		public function deleteObservation($id)
 		{
 			if ($this->model_Observation->suppObservation($id)) {
-				return redirect("index.php/Observation/affichListPat");
+				return redirect("index.php/Affichage/affichListMod");
 			}
 		}
 	}

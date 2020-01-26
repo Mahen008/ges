@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/jquery.dataTables.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/DataTables/dataTables.bootstrap4.min.css">
   <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url()?>assets/img/favicon.ico">
-  <title>Gasikara Exploration Srevice</title>
+  <title>Gasikara Exploration Service</title>
   <link href="<?php echo base_url()?>assets/css/icon.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>assets/css/font-awesome.min.css">
     

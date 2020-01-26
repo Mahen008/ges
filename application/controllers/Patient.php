@@ -27,6 +27,7 @@
 			$this->form_validation->set_rules("adress","adresse","required");
 			$this->form_validation->set_rules("phone","Téléphone","required");
 			$this->form_validation->set_rules("phonepro","Téléphone du proche","required");
+			$this->form_validation->set_rules("Consultation","Consulter","required");
 			
 
 			$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
@@ -40,7 +41,8 @@
 					"adresse" => $this->input->post("adress"),
 					"phone" => $this->input->post("phone"),
 					//"Libelle" => $this->input->post("libelarticl"),
-					"phoneProche" => $this->input->post("phonepro")
+					"phoneProche" => $this->input->post("phonepro"),
+					"consulter" => $this->input->post("consult")
 				);
 
 				if ($this->model_Patient->insererPatient($data)) {
@@ -76,6 +78,7 @@
 			$this->form_validation->set_rules("adress","adresse","required");
 			$this->form_validation->set_rules("phone","Téléphone","required");
 			$this->form_validation->set_rules("phonepro","Téléphone du proche","required");
+			$this->form_validation->set_rules("consult","Consultation","required");
 
 			$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 
@@ -88,8 +91,12 @@
 					"adresse" => $this->input->post("adress"),
 					"phone" => $this->input->post("phone"),
 					//"Libelle" => $this->input->post("libelarticl"),
-					"phoneProche" => $this->input->post("phonepro")
+					"phoneProche" => $this->input->post("phonepro"),
+					"consulter" => $this->input->post("consult")
 				);
+
+				var_dump($data);
+				exit();
 
 				if ($this->model_Patient->updatePatient($id,$data)) {
 					return redirect(base_url()."index.php/Patient/affichPatient");

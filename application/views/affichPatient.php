@@ -9,10 +9,10 @@
 	<?php include("include/sidebar.php");?>
 
 
-	<div id="container">
+	<div class="page-wrapper" id="container">
 		<div id="wrapper">
 	
-			<div id="page-content-wrapper" style="margin-left: 210px; margin-top: 30px; width: 1159px;">
+			<div id="page-content-wrapper" >
            
 	           <!-- debut card-->
 	            <div class="card">
@@ -90,6 +90,23 @@
 			                            </div>
 
 			                            <div class="row">
+
+			                            	<div class="col-md-6 mb-3">
+			                            		<label>Consultation</label>
+												<label class="custom-control custom-checkbox">OUI
+												  <input type="radio" name="consult" value="1">
+												  <span class="checkmark"></span>
+												</label>
+												<label class="custom-control custom-checkbox">NON
+												  <input type="radio" checked="checked" name="consult" value="2">
+												  <span class="checkmark"></span>
+												</label>
+									  			<span class="text-danger"><?php echo form_error("consult");?></span>
+			                            	</div>
+
+			                            </div>
+
+			                            <div class="row">
 			                            	
 			                            </div>
 
@@ -106,7 +123,7 @@
 		                <!-- debut table-->
 		                <table class="table table-striped" id="table_datatable" >
 
-		                    <thead style="background-color: #367fa9;">
+		                    <thead style="background-color: #367fa9; color: #fff;">
 		                        <tr>
 		                            <th>Nom</th>
 		                            <th>Prénom</th>
@@ -114,6 +131,7 @@
 		                            <th>Adresse</th>
 		                            <th>Numero téléphone</th>
 		                            <th>Numero téléphone du proche</th>
+		                            <th>Consultation</th>
 		                            <th>Actions</th>
 		                        </tr>
 		                    </thead>
@@ -129,6 +147,14 @@
 				                            <td><?php echo $pe->DDN; ?></td>
 				                            <td><?php echo $pe->phone; ?></td>
 				                            <td><?php echo $pe->phoneProche; ?></td>
+
+				                            <?php if( $pe->consulter == '1'): ?>
+				                            	<td><span class="custom-badge status-green">Faite</span></td>
+				                            <?php else: ?>
+				                            	<td><span class="custom-badge status-red">En attente</span></td>
+				                            <?php endif ?>
+
+				                            <!-- <td><?php echo $pe->consulter; ?></td> -->
 				                            <td>
 				                                <div class="dropdown">
 													<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1em;">

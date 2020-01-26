@@ -17,82 +17,12 @@
 		<script src="assets/js/respond.min.js"></script>
 	<![endif]-->
 </head>
-
+ 
 <body>
-    <div class="main-wrapper">
-        <div class="header">
-			<div class="header-left">
-				<a href="index.php" class="logo">
-					<img src="<?php echo base_url()?>assets/img/logo.png" width="35" height="35" alt=""> <span>La sérénité</span>
-				</a>
-			</div>
-			<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
-            <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
-            <ul class="nav user-menu float-right">
-               
-                <li class="nav-item dropdown has-arrow">
-                    <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img">
-							<img class="rounded-circle" src="<?php echo base_url()?>assets/img/user.jpg" width="24" alt="Admin">
-							<span class="status online"></span>
-						</span>
-						<span>Admin</span>
-                    </a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="profile.html">My Profile</a>
-						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-						<a class="dropdown-item" href="settings.html">Settings</a>
-						<a class="dropdown-item" href="<?php echo base_url()?>index.php/Frontend/login">Logout</a>
-					</div>
-                </li>
-            </ul>
-            <div class="dropdown mobile-user-menu float-right">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="profile.html">My Profile</a>
-                    <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-                    <a class="dropdown-item" href="settings.html">Settings</a>
-                    <a class="dropdown-item" href="<?php echo base_url()?>index.php/Frontend/login">Logout</a>
-                </div>
-            </div>
-        </div>
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-inner slimscroll">
-                <div id="sidebar-menu" class="sidebar-menu">
-                    <ul>
-                        <li class="menu-title" style="margin-left: 60px; font-size: 1.4em; color: #000;margin-top: 15px;"><b>MENU</b></li>
-                        <li>
-                            <a href="<?php echo base_url()?>index.php/Frontend/acceuil"><b><i class="fa fa-dashboard"></i></b> <span>Dashboard</span></a>
-                        </li>
-                        
-                        <li>
-                            <a href="<?php echo base_url()?>index.php/patient/affichPatient"><b><i class="fa fa-wheelchair"></i></b> <span>Patients</span></a>
-                        </li>
+   <?php include("include/header.php");?>
+    <?php include("include/headerApp.php");?>
+    <?php include("include/sidebar.php");?>
 
-                        <li>
-                            <a href="<?php echo base_url()?>index.php/Observation/affichListPat"><b><i class="fa fa-calendar"></i></b> <span>Appointments</span></a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url()?>index.php/Observation/affichListPat"><b><i class="fa fa-calendar-check-o"></i></b> <span>Doctor consultation</span></a>
-                        </li>
-                        <li>
-                            <a href="departments.html"><b><i class="fa fa-hospital-o"></i></b> <span>Departments</span></a>
-                        </li>
-                        <li class="submenu">
-                            <a href="#"><b><i class="fa fa-user"></i></b> <span> Employees</span></a>
-                            <ul style="display: none;">
-                                <li><a href="employees.html">Employees List</a></li>
-                                <li><a href="leaves.html">Leaves</a></li>
-                                <li><a href="holidays.html">Holidays</a></li>
-                                <li><a href="attendance.html">Attendance</a></li>
-                            </ul>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
         <div class="page-wrapper">
             <div class="content">
                 <div class="row">
@@ -148,14 +78,7 @@
 				</div>
           
     </div>
-    <div class="sidebar-overlay" data-reff=""></div>
-    <script src="<?php echo base_url()?>assets/js/jquery-3.2.1.min.js"></script>
-	<script src="<?php echo base_url()?>assets/js/popper.min.js"></script>
-    <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url()?>assets/js/jquery.slimscroll.js"></script>
-    <script src="<?php echo base_url()?>assets/js/Chart.bundle.js"></script>
-    <script src="<?php echo base_url()?>assets/js/chart.js"></script>
-    <script src="<?php echo base_url()?>assets/js/app.js"></script>
+    <?php include("include/footer.php");?>
 
 </body>
 

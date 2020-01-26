@@ -28,9 +28,10 @@
 			return $this->db->delete('patient',['id' => $id]);
 		}
 
-		public function getObs($id)
+		public function getIdCons($idOb)
 		{
-			$unObs = $this->db->get_where('observation',array('id' => $id));
+			// $unObs = $this->db->get_where('observation',array('idOb' => $idOb));
+			$unObs = $this->db->query("SELECT patient.*,observation.* FROM observation INNER JOIN patient ON patient.id = observation.idPatient");
 			if ($unObs->num_rows() > 0) {
 				return $unObs->row();
 			}
@@ -46,6 +47,8 @@
 				return $consult->row();
 
 		}
+		
+		
 
 	}
  
