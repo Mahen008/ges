@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>editCOnsultation</title>
+		<title>editer consultation</title>
 	</head>
 	<style type="text/css">
 
@@ -35,12 +35,11 @@
 		<h3 style="margin-top: 20px;">OBSERVATION MEDICAL</h2>
 			<h4>ETAT CIVIL</h4>
 							
-				<form method="post" action="<?php echo base_url()?>index.php/Affichage/updateConsultation/<?php echo $patCons->idOb;?>" style="margin-top: 20px;">
+				<form method="post" action="<?php echo base_url()?>index.php/Observation/updateConsultation/<?php echo $patCons->idOb;?>" style="margin-top: 20px;">
 					
-				<!-- <input type="text" name="name fname" class="form-control" value="<?php echo set_value('name',$patCons->nom);?> <?php echo set_value('fname',$patCons->prenom);?>" disabled>
-                <span class="text-danger"><?php echo form_error("name");?></span><span class="text-danger"><?php echo form_error("fname");?></span> -->
+			
 					  <!-- Tab panes -->
-					  <div class="tab-content">:
+					  <div class="tab-content">
 					      <h4>RESUME DE L'OBSERVATION</h4>
 					      <table class="table" border="solid" position: fixed; left: 0%;>
 						    <thead class="thead-dark">

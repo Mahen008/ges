@@ -42,11 +42,7 @@
 			}
 		}
 
-		public function updateConsultation($idOb,$dataa)
-		{
-			return $this->db->where('idOb',$idOb)
-							->update('observation',$dataa);
-		}
+		
 	}
 
 ?>

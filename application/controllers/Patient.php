@@ -21,13 +21,15 @@
 		//ajout
 		public function ajoutNewPatient()
 		{	
+   			$consulter = $this->input->post('consulter');
+
 			$this->form_validation->set_rules("name","Nom","required");
-			$this->form_validation->set_rules("fname","Prénom","required");
+			$this->form_validation->set_rules("fname","Prénom");
 			$this->form_validation->set_rules("ddn","Date de naissance","required");// name = "ddn", label : "Date de naissance"
 			$this->form_validation->set_rules("adress","adresse","required");
 			$this->form_validation->set_rules("phone","Téléphone","required");
 			$this->form_validation->set_rules("phonepro","Téléphone du proche","required");
-			$this->form_validation->set_rules("Consultation","Consulter","required");
+			$this->form_validation->set_rules("Consultation","Consulter");
 			
 
 			$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
@@ -42,7 +44,7 @@
 					"phone" => $this->input->post("phone"),
 					//"Libelle" => $this->input->post("libelarticl"),
 					"phoneProche" => $this->input->post("phonepro"),
-					"consulter" => $this->input->post("consult")
+					"consulter"=>json_encode(implode(",",$consulter))
 				);
 
 				if ($this->model_Patient->insererPatient($data)) {
@@ -50,16 +52,19 @@
 				}
 
 				else{
-					return redirect(base_url()."index.php/Patient/affichPatient");
+					$msg = "not save" ;
 				}
 
 			}
 
 			else
 			{
-				$this->affichPatient();
+				$msg = "probleme de validation formulaire";
 			}
+			$this->session->set_flashdata('msg', $msg);
+			$this->affichPatient();
 		}
+
 
 		//editer 
 		public function editPatient($id)
@@ -70,15 +75,16 @@
 
 		//modifier
 		public function updatePatient($id)
-		{
+		{	
+			$consulter = $this->input->post('consulter');
 			
 			$this->form_validation->set_rules("name","Nom","required");
-			$this->form_validation->set_rules("fname","Prénom","required");
+			$this->form_validation->set_rules("fname","Prénom");
 			$this->form_validation->set_rules("ddn","Date de naissance","required");// name = "ddn", label : "Date de naissance"
 			$this->form_validation->set_rules("adress","adresse","required");
 			$this->form_validation->set_rules("phone","Téléphone","required");
 			$this->form_validation->set_rules("phonepro","Téléphone du proche","required");
-			$this->form_validation->set_rules("consult","Consultation","required");
+			$this->form_validation->set_rules("consulter","Consultation");
 
 			$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 
@@ -92,7 +98,7 @@
 					"phone" => $this->input->post("phone"),
 					//"Libelle" => $this->input->post("libelarticl"),
 					"phoneProche" => $this->input->post("phonepro"),
-					"consulter" => $this->input->post("consult")
+					"consulter"=>json_encode(implode(",",$consulter))
 				);
 
 				var_dump($data);

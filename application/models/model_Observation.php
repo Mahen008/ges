@@ -23,9 +23,9 @@
 			return $affichListeCons->result();
 		}
 
-		public function suppObservation($id)
+		public function suppObservation($idOb)
 		{
-			return $this->db->delete('patient',['id' => $id]);
+			return $this->db->delete('patient',['idO' => $idO]);
 		}
 
 		public function getIdCons($idOb)
@@ -48,7 +48,17 @@
 
 		}
 		
-		
+		public function updateConsultation($idOb,$dataa)
+		{
+			return $this->db->where('idOb',$idOb)
+							->update('observation',$dataa);
+		}
+
+		// public function updateArticle($idArt,$data)
+		// {
+		// 	return $this->db->where('idArt',$idArt)
+		// 					->update('article',$data);
+		// }
 
 	}
  

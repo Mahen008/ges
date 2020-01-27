@@ -59,24 +59,18 @@
 					<span class="text-danger"><?php echo form_error("phonepro");?></span>
 				</div>
 
-				<div class="form-group">
-					<label>Téléphone du proche</label>
-				    <input type="text" name="phonepro" class="form-control" value="<?php echo set_value('phonepro',$unPatient->phoneProche);?>">
-					<span class="text-danger"><?php echo form_error("phonepro");?></span>
-				</div>
-
 				<div class="form-check">
-
+					<label>Consultation</label>
 					<label class="custom-control custom-checkbox">OUI
-					  <input type="radio" name="consult" value="<?php echo set_value('consult',$unPatient->consulter);?>">
+					  <input type="radio" checked="checked" name="consulter[]" value="1">
 					  <span class="checkmark"></span>
 					</label>
 					<label class="custom-control custom-checkbox">NON
-					  <input type="radio" checked="checked" name="consult" value="<?php echo set_value('consult',$unPatient->consulter);?>">
+					  <input type="radio" name="consulter[]" value="0">
 					  <span class="checkmark"></span>
 					</label>
-		  			<span class="text-danger"><?php echo form_error("consult");?></span>
-                 
+		  			<span class="text-danger"><?php echo form_error("consulter");?></span>
+                 	
                 </div><br>
 
 				<button type="submit" class="btn btn-success">Modifier</button>
