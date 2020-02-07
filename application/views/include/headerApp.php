@@ -1,8 +1,8 @@
 <div class="main-wrapper">
     <div class="header">
     	<div class="header-left">
-    		<a href="<?php echo base_url()?>index.php/Frontend/acceuil" class="logo">
-    			<img src="<?php echo base_url()?>assets/img/logo.png" width="35" height="35" alt=""> <span>La sérénité</span>
+    		<a href="<?php echo base_url()?>index.php/Home/home" class="logo">
+    			<img src="<?php echo base_url()?>assets/img/logo.png" width="35" height="35" alt=""> <span>GES</span>
     		</a>
     	</div>
     	<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>

@@ -29,7 +29,7 @@
 <body>
 	<?php include("include/header.php");?>
 	<?php include("include/headerApp.php");?>
-	<?php include("include/sidebar.php");?>
+	<?php include("include/sidebarDial.php");?>
 	<div class="page-wrapper" id="">
             <div class="content">
                 <div class="row">
@@ -37,9 +37,9 @@
                         <h4 class="page-title">Fiche Medical</h4>
                     </div>
                     <div class="col-sm-7 col-8 text-right m-b-30">
-                        <div class="btn-group btn-group-sm">
+                        <div class="btn-group btn-group-lg">
                             <!-- <button class="btn btn-white">CSV</button> -->
-                            <button class="btn btn-white" onclick='window.print();'><i class="fa fa-print fa-lg"></i> PDF</button>
+                            <button class="btn btn-outline-danger" onclick='window.print();'><i class="fa fa-print fa-lg"></i> PDF</button>
                             <!-- <button class="btn btn-white"> Print</button> -->
                         </div>
                     </div>
@@ -283,7 +283,7 @@
 
 
 					  <button type="" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Ajouter</button>
-						<a href="<?php echo base_url()?>index.php/Observation/affichListPat" class="btn btn-success"><span class="glyphicon glyphicon-step-backward"></span> Retour</a>
+						<a href="<?php echo base_url()?>index.php/Affichage/affichListFicheMed" class="btn btn-success"><span class="glyphicon glyphicon-step-backward"></span> Retour</a>
 						
 				  
 			  			

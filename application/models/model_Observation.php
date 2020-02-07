@@ -25,7 +25,7 @@
 
 		public function suppObservation($idOb)
 		{
-			return $this->db->delete('patient',['idO' => $idO]);
+			return $this->db->delete('observation',['idOb' => $idOb]);
 		}
 
 		public function getIdCons($idOb)

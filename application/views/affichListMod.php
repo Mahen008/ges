@@ -8,7 +8,7 @@
 <body>
 	<?php include("include/header.php");?>
 	<?php include("include/headerApp.php");?>
-	<?php include("include/sidebar.php");?>
+	<?php include("include/sidebarDial.php");?>
 
 	<div class="page-wrapper">
 		<!-- debut wrapper -->
@@ -60,7 +60,7 @@
 													</button>
 														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 														    <a href="<?php echo base_url()?>index.php/Affichage/editPatCons/<?php echo $pe->idOb; ?>" class="btn btn-success" role="button" style="font-size: 1em;"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-				                                 			<a href="<?php echo base_url()?>index.php/Observation/deleteObservation/<?php echo $pe->id; ?>" class="btn btn-danger" role="button" style="font-size:1em;" onclick="return confirm('Voulez-vous vraiment supprimer')"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+				                                 			<a href="<?php echo base_url()?>index.php/Observation/deleteObservation/<?php echo $pe->idOb; ?>" class="btn btn-danger" role="button" style="font-size:1em;" onclick="return confirm('Voulez-vous vraiment supprimer')"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
 														</div>
 												</div>
 				                            </td>

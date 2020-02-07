@@ -16,7 +16,6 @@
 		{
 			$this->load->view('login.php');
 		}
-
 		
 	}
 
