@@ -6,7 +6,7 @@
 <body>
 	<?php include("include/header.php");?>
 	<?php include("include/headerApp.php");?>
-	<?php include("include/sidebarAcc.php");?>
+	<?php include("include/sidebarDial.php");?>
 
 
 	<div class="page-wrapper" id="container">
@@ -26,9 +26,12 @@
 	                	<!-- debut container-fluid-->
 	                    <div class="container-fluid">
 
-	                <div class="col-sm-8 col-9 text-right m-b-20" style="margin-left: 30%; margin-top: 0px;">
-                        <a data-toggle="modal" data-target="#exampleModalLong" class="btn btn btn-primary btn-rounded float-right active"><i class="fa fa-plus"></i>Add Patient</a>
-                    </div>
+	                <!-- <div class="col-sm-8 col-9 text-right m-b-20" style="margin-left: 30%; margin-top: 0px;">
+                        <a data-toggle="modal" data-target="#exampleModalLong" class="btn btn btn-primary btn-rounded float-right active"><i class="fa fa-plus"></i>Add Consultation</a>
+                    </div> -->
+                    <div class="col-sm-8 col-9 text-right m-b-20" style="margin-left: 30%; margin-top: 0px;">
+	                    <a data-toggle="modal" data-target="#exampleModalLong" class="btn btn btn-primary btn-rounded float-right active"><i class="fa fa-plus"></i>Add Consultation</a>
+	                </div>
 
 		                 <!-- Modal ajout article -->
 		                <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -37,80 +40,59 @@
 
 		                      <div class="modal-header">
 
-		                        <h5 class="modal-title" id="exampleModalLongTitle" >Ajouter un nouveau patient</h5>
+		                        <h5 class="modal-title" id="exampleModalLongTitle" >Ajouter un nouveau consommation</h5>
 		                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		                          <span aria-hidden="true">&times;</span>
 		                        </button>
 		                      </div>
 
-		                    <form action="<?php echo base_url()?>index.php/Patient/ajoutNewPatient" method="post" role="form">
+		                    <form action="<?php echo base_url()?>index.php/consommation/ajoutConsommation" method="post" role="form">
                         	
                         	<div class="modal-body">
 
+                        				<div class="row">
+			                            	<div class="col-md-6 mb-3">
+			                            		<label>Nom de patient</label>
+			                            		<select name="idPat" class="form-control">
+						                            <option value="#">choix de patient</option>
+						                                <?php foreach($affichCo as $pt): ?>
+						                                    <option value="<?php echo $pt->id; ?>"><?php echo $pt->nom; ?><?php echo $pt->prenom; ?></option>
+						                                <?php endforeach; ?>
+						                        </select>
+			                            		<span class="text-danger"><?php echo form_error("idPat");?></span>
+			                            	</div>
+			                            </div>
 			                            <div class="row">
 			                            	<div class="col-md-6 mb-3">
-			                            		<label>Nom</label>
-			                            		<input type="text" name="name" class="form-control">
-			                            		<span class="text-danger"><?php echo form_error("name");?></span>
+			                            		<label>Nom de stock</label>
+			                            		<select name="idSt" class="form-control">
+						                            <option value="#">choix de consommation</option>
+						                                <?php foreach($affichStock as $st): ?>
+						                                    <option value="<?php echo $st->idSt; ?>"><?php echo $st->libelle; ?></option>
+						                                <?php endforeach; ?>
+						                        </select>
+			                            		<span class="text-danger"><?php echo form_error("idSt");?></span>
 			                            	</div>
 			                            	<div class="col-md-6 mb-3">
-			                            		<label>Prénom</label>
-			                            		<input type="text" name="fname" class="form-control">
-			                            		<span class="text-danger"><?php echo form_error("fname");?></span>
+				                                <label>Date</label>
+				                                <input type="date" name="date" class="form-control">
+				                                <span class="text-danger"><?php echo form_error("date");?></span>
 			                            	</div>
 			                            </div>
 
 			                            <div class="row">
 			                            	<div class="col-md-6 mb-3">
-			                            		<label>Date de naissance</label>
-			                            		<input type="date" name="ddn" class="form-control">
-			                            		<span class="text-danger"><?php echo form_error("ddn");?></span>
+			                            		<label>Nombre en détaille</label>
+			                            		<input type="text" name="nd" class="form-control">
+			                            		<span class="text-danger"><?php echo form_error("nd");?></span>
 			                            	</div>
 			                            	<div class="col-md-6 mb-3">
-				                                <label>adresse</label>
-				                                <input type="text" name="adress" class="form-control">
-				                                <span class="text-danger"><?php echo form_error("adress");?></span>
+				                                <label>paquet</label>
+				                                <input type="text" name="pt" class="form-control">
+				                                <span class="text-danger"><?php echo form_error("pt");?></span>
 			                            	</div>
 			                            </div>
 
-			                            <div class="row">
-
-			                            	<div class="col-md-6 mb-3">
-				                                <label>Téléphone</label>
-				                                <input type="text" name="phone" class="form-control">
-				                                <span class="text-danger"><?php echo form_error("phone");?></span>
-			                            	</div>
-
-				                            <div class="col-md-6 mb-3">
-				                                <label>Téléphone du proche</label>
-				                                <input type="text" name="phonepro" class="form-control">
-				                                <span class="text-danger"><?php echo form_error("phonepro");?></span>
-			                            	</div>
-
-			                            </div>
-
-			                            <div class="row">
-
-			                            	<div class="col-md-6 mb-3">
-			                            		<label>Consultation</label>
-												<label class="custom-control custom-checkbox">OUI
-												  <input type="radio" name="consulter[]" value="1">
-												</label>
-												  <span class="checkmark"></span>
-												<!-- </label> -->
-												<label class="custom-control custom-checkbox">NON
-												  <input type="radio" checked="checked" name="consulter[]" value="2">
-												</label>  
-												  <span class="checkmark"></span>
-												
-									  			<span class="text-danger"><?php echo form_error("consulter");?></span>
-			                            	</div>
-
-			                            </div>
-
-			                            <div class="row">
-			                            	
-			                            </div>
 
 			                            <div class="modal-footer">
 		                                    <button type="submit" class="btn btn-primary">Enregistrer</button>
@@ -127,46 +109,20 @@
 
 		                    <thead style="background-color: #367fa9; color: #fff;">
 		                        <tr>
-		                            <th>Nom</th>
-		                            <th>Prénom</th>
-		                            <th>Date de naissance</th>
-		                            <th>Adresse</th>
-		                            <th>Numero téléphone</th>
-		                            <th>Numero téléphone du proche</th>
-		                            <th>Consultation</th>
+		                            <th>Nom et Prénom</th>
 		                            <th>Actions</th>
 		                        </tr>
 		                    </thead>
 
 		                    <tbody>
 
-		                    		<?php foreach($affichPat as $pe):?>
+		                    		
 				                        <tr>
 				                     
-				                            <td><img width="28" height="28" src="<?php echo base_url()?>assets/img/user.jpg" class="rounded-circle m-r-5" alt=""><?php echo $pe->nom; ?></td>
-				                            <td><?php echo $pe->prenom; ?></td>
-				                            <td><?php echo $pe->adresse; ?></td>
-				                            <td><?php echo $pe->DDN; ?></td>
-				                            <td><?php echo $pe->phone; ?></td>
-				                            <td><?php echo $pe->phoneProche; ?></td>
-
-				                            <?php if( $pe->consulter == '1'): ?>
-				                            	<td><span class="custom-badge status-green">Faite</span></td>
-				                            <?php else: ?>
-				                            	<td><span class="custom-badge status-red">En attente</span></td>
-				                            <?php endif ?>
-
-				                            <!-- <td><?php echo $pe->consulter; ?></td> -->
+				                            <td><img width="28" height="28" src="<?php echo base_url()?>assets/img/user.jpg" class="rounded-circle m-r-5" alt=""></td>
 				                            <td>
-				                                <div class="dropdown">
-													<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1em;">
-													    Action
-													</button>
-														<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-														    <a href="<?php echo base_url()?>index.php/Patient/editPatient/<?php echo $pe->id; ?>" class="btn btn-success" role="button" style="font-size: 1em;"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
-				                                 			<a href="<?php echo base_url()?>index.php/Patient/deletePatient/<?php echo $pe->id; ?>" class="btn btn-danger" role="button" style="font-size:1em;" onclick="return confirm('Voulez-vous vraiment supprimer')"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
-														</div>
-												</div>
+				                                
+											</td>
 												<!-- <div class="dropdown dropdown-action">
 												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
 												<div class="dropdown-menu dropdown-menu-right">
@@ -176,7 +132,7 @@
 											</div>
 				                            </td>
 				                        </tr>
-			                    	<?php endforeach;?>
+			                    	
 			                        
 	                    </tbody>
 

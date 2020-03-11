@@ -13,7 +13,6 @@
 		//affichage 
 		public function affichStock()
 		{
-			
 			$affichStock = $this->model_stock->AffichageStock();
 			$this->load->view('EntrerStock.php',['affichStock' => $affichStock]);
 		}
@@ -59,66 +58,84 @@
 		}
 
 
-		//editer 
-		public function editPatient($id)
-		{
-			$unPatient = $this->model_stock->getPatient($id);
-			$this->load->view('editPatient',['unPatient' => $unPatient]);
-		}
+		// //editer 
+		// public function editPatient($id)
+		// {
+		// 	$unPatient = $this->model_stock->getPatient($id);
+		// 	$this->load->view('editPatient',['unPatient' => $unPatient]);
+		// }
 
-		//modifier
-		public function updatePatient($id)
-		{	
+		// //modifier
+		// public function updatePatient($id)
+		// {	
 			
-			$this->form_validation->set_rules("name","Nom","required");
-			$this->form_validation->set_rules("fname","Prénom");
-			$this->form_validation->set_rules("ddn","Date de naissance","required");// name = "ddn", label : "Date de naissance"
-			$this->form_validation->set_rules("adress","adresse","required");
-			$this->form_validation->set_rules("phone","Téléphone","required");
-			$this->form_validation->set_rules("phonepro","Téléphone du proche","required");
-			$this->form_validation->set_rules("consulter","Consultation");
+		// 	$this->form_validation->set_rules("name","Nom","required");
+		// 	$this->form_validation->set_rules("fname","Prénom");
+		// 	$this->form_validation->set_rules("ddn","Date de naissance","required");// name = "ddn", label : "Date de naissance"
+		// 	$this->form_validation->set_rules("adress","adresse","required");
+		// 	$this->form_validation->set_rules("phone","Téléphone","required");
+		// 	$this->form_validation->set_rules("phonepro","Téléphone du proche","required");
+		// 	$this->form_validation->set_rules("consulter","Consultation");
 
-			$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
+		// 	$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 
-			if ($this->form_validation->run()) {
+		// 	if ($this->form_validation->run()) {
 			
-				$data = array(
-					"nom" => $this->input->post("name"),
-					"prenom" => $this->input->post("fname"),
-					"DDN" => $this->input->post("ddn"),
-					"adresse" => $this->input->post("adress"),
-					"phone" => $this->input->post("phone"),
-					//"Libelle" => $this->input->post("libelarticl"),
-					"phoneProche" => $this->input->post("phonepro"),
-					// "consulter"=>json_encode(implode(",",$consulter))
-					"consulter" => $this->input->post("consulter")
-				);
+		// 		$data = array(
+		// 			"nom" => $this->input->post("name"),
+		// 			"prenom" => $this->input->post("fname"),
+		// 			"DDN" => $this->input->post("ddn"),
+		// 			"adresse" => $this->input->post("adress"),
+		// 			"phone" => $this->input->post("phone"),
+		// 			//"Libelle" => $this->input->post("libelarticl"),
+		// 			"phoneProche" => $this->input->post("phonepro"),
+		// 			// "consulter"=>json_encode(implode(",",$consulter))
+		// 			"consulter" => $this->input->post("consulter")
+		// 		);
 
-				var_dump($data);
-				exit();
+		// 		var_dump($data);
+		// 		exit();
 
-				if ($this->model_Patient->updatePatient($id,$data)) {
-					return redirect(base_url()."index.php/Patient/affichPatient");
-				}
+		// 		if ($this->model_Patient->updatePatient($id,$data)) {
+		// 			return redirect(base_url()."index.php/Patient/affichPatient");
+		// 		}
 
-				else{
-					return redirect(base_url()."index.php/Patient/affichPatient");
-				}
+		// 		else{
+		// 			return redirect(base_url()."index.php/Patient/affichPatient");
+		// 		}
 
-			}
+		// 	}
 
-			else
-			{
-				$this->editPatient($id);
-			}
-		}
+		// 	else
+		// 	{
+		// 		$this->editPatient($id);
+		// 	}
+		// }
 
 		//supprimer une Patient
 		public function deleteStock($idSt)
 		{
 			if ($this->model_stock->suppStock($idSt)) {
-				return redirect("index.php/stock/affichStock");
+				return redirect(base_url()."index.php/stock/affichStock");
 			}
+		}
+
+		public function SortieStock()
+		{
+			
+			$this->load->view('SortieStock.php',[]);
+		}
+
+		public function EtatDeStock()
+		{
+			$data['stock'] = $this->model_stock->stock();
+			$this->load->view('EtatDeStock.php',$data);
+		}
+		
+		public function statStock()
+		{
+			
+			$this->load->view('statStock.php');
 		}
 	}
 ?>

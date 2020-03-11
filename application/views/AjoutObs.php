@@ -31,22 +31,59 @@
  	<?php include("include/headerApp.php");?>
 	<!-- <?php include("include/sidebar.php");?>
 	 -->
-	<h3 style="margin-top: 70px;">OBSERVATION MEDICAL</h2>
-	<h4>ETAT CIVIL</h4>
+	 <a style="margin-left: 97%; margin-top: 60px;" class="btn btn-outline-danger" href="<?php echo base_url()?>index.php/Affichage/affichListMod"><i class="fa fa-times"></i></a>
+	<h3 style="margin-top: 0px;">OBSERVATION MEDICAL</h3>
+
+	<h4 style="margin-left: 20%;">ETAT CIVIL</h4>
 	<div id="container">
 		<!-- debut wrapper -->
 		<div id="wrapper">
 
-		<form method="post" action="<?php echo base_url()?>index.php/Observation/AjoutConsultation">
+			 <!-- Modal modif observation -->
+                <div class="modal fade" id="modalEditer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                  <div class="modal-dialog" role="document"><br>
+                    <div class="modal-content">
+
+                      <div class="modal-header">
+
+                        <h5 class="modal-title" id="modalModif" >Consultation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+
+                      <div class="modal-body">
+            
+                        <form id="observUpdateForm"  method="post" role="form">
+
+                            <div class="form-group">
+                            	<label class="col-form-label">Consulter</label>
+                            	<input type="checkbox" name="consulter" value="1">
+                            	<span class="text-danger"><?php echo form_error("consulter");?></span>
+                            </div>
+
+                            <div class="modal-footer">
+                                <input type="submit" name="action" class="btn btn-success" value="Modifier"/>   
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button> 
+                            </div>
+                            
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+	  
+		<form method="post"  id="observForm" action="<?php echo base_url()?>index.php/Observation/AjoutConsultation">
 			
 			<div class="container">
 		
 				<div class="box">
-					<label class="form-group">Nom</label>
+					<br>
                        <select name="name" class="form-control">
-                            <option value="">select patient</option>
-                                <?php foreach($affichPatient as $pat): ?>
-                                    <option value="<?php echo $pat->id; ?>"><?php echo $pat->nom; ?></option>
+                            <option value="">SELECTIONNER LE PATIENT</option>
+                                <?php foreach($affichPatNon as $pat): ?>
+                                    <option value="<?php echo $pat->id; ?>"><b><?php echo $pat->nom; echo ' '; echo $pat->prenom;?></b></option>
                                 <?php endforeach; ?>
                         </select>
 
@@ -54,14 +91,7 @@
 					<!-- <label>Date de naissance : <?php echo set_value('ddn',$unPatientObs->DDN);?></label><br>
 					<label>Numéro téléphone : <?php echo set_value('phone',$unPatientObs->phone);?></label> -->
 				</div>
-				<div class="box" >
-					<!-- <label>Age : </label> -->
-				</div>
-				<div class="box" >
-					<!-- <label>Prenom : <?php echo set_value('fname',$unPatientObs->prenom);?></label><br>
-					<label>Adresse : <?php echo set_value('adress',$unPatientObs->adresse);?></label><br>
-					<label>Numéro téléphone : <?php echo set_value('phonepro',$unPatientObs->phoneProche);?></label> -->
-				</div>	
+					
 			</div>
 			<div class="containermt-3">
 				  <br>
@@ -90,7 +120,7 @@
 					        <th>Début d'hémodialyse</th>
 					        <th>Histoire de la maladie</th>
 					        <th>Antécédents</th>
-					        <th>Comorbités</th>
+					        <th>Comorbidités</th>
 					        <th>Etat général actuel</th>
 					      </tr>
 					    </thead>
@@ -163,8 +193,8 @@
 					        		<option value="O+">O+</option>
 					        		<option value="A-">A-</option>
 					        		<option value="B-">B-</option>
-					        		<option value="AB-">BEG</option>
-					        		<option value="O-">ABEG</option>
+					        		<option value="AB-">BE-</option>
+					        		<option value="O-">O-</option>
 					        	</select>
 					        	<span class="text-danger"><?php echo form_error("groupSan");?></span></td>
 
@@ -380,6 +410,30 @@
 				  $(".nav-tabs a").click(function(){
 				    $(this).tab('show');
 				  });
+
+
+				  // ----------script ajout------------------------------
+
+		            // $('#observForm').on('submit',function(e){
+		            //     e.preventDefault();
+
+		            //     $.ajax({  
+		            //          url:"",  
+		            //          method:'POST',  
+		            //          data:new FormData(this),  
+		            //          contentType:false,  
+		            //          processData:false,  
+		            //          success:function(data)  
+		            //          {  
+		            //             $('#modalEditer').modal('show');
+		                       	
+		            //             // actualiser();
+		             
+		            //          }  
+		            //     });
+		            // });
+
+
 				});
 				
 			      

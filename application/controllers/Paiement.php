@@ -1,6 +1,6 @@
 <?php
 	
-	class planning extends CI_Controller
+	class Paiement extends CI_Controller
 	{
 			function __construct()
 			{
@@ -11,10 +11,10 @@
 				$this->load->model("model_stock");
 			}
 		
-		public function affichPlanning()
+		public function affichPaiement()
 		{
 			
-			$this->load->view('affichPlanning',[]);
+			$this->load->view('affichPaiement',[]);
 
 		}
 

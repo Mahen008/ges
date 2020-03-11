@@ -5,13 +5,16 @@
 		public function AjoutConsultation($dataa)
 		{
 			$this->db->insert("observation",$dataa);
+			$last_id = $this->db->insert_id();
+			return $last_id;
 		}
 
-		// public function AffichageObservation()
-		// {
-		// 	$affichObservation = $this->db->get("patient");
-		// 	return $affichObservation->result();
-		// }
+		public function AffichageObservation()
+		{
+			$affichObservation = $this->db->query("SELECT patient.*,observation.* FROM patient INNER JOIN observation ON observation.idPatient = patient.id ");
+			return $affichObservation->result();
+		}
+
 
 		public function affichList()
 		{
@@ -52,6 +55,12 @@
 		{
 			return $this->db->where('idOb',$idOb)
 							->update('observation',$dataa);
+		}
+
+		public function updateConsult($id,$data)
+		{
+			return $this->db->where('id',$id)
+							->update('patient',$data);
 		}
 
 		// public function updateArticle($idArt,$data)

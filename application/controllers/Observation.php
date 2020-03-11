@@ -24,8 +24,8 @@
 
 		public function AjoutObs()
 		{
-			$affichPatient = $this->model_Patient->AffichagePatient();
-			$this->load->view('AjoutObs',['affichPatient' => $affichPatient]);
+			$affichPatNon = $this->model_Affichage->affichNonCon();
+			$this->load->view('AjoutObs',['affichPatNon' => $affichPatNon]);
 		}
 
 		public function affichListPat()
@@ -33,6 +33,13 @@
 			$affichPatient = $this->model_Patient->AffichagePatient();
 			// $consultPat= $this->model_Observation->consultation($id);
 			$this->load->view('affichListPat',['affichPatient' => $affichPatient]);
+		}
+
+		public function afficheConsultation()
+		{
+			$dataa["affichPatient"] = $this->model_Patient->AffichagePatient();
+			$dataa["affich"] = $this->model_Observation->AffichageObservation();
+			$this->load->view('afficheConsultation',$dataa);
 		}
 
 		public function Affichconsult($id)
@@ -44,7 +51,7 @@
 		public function AjoutConsultation()
 		{
 			$this->form_validation->set_rules("name","name","integer|required");
-			$this->form_validation->set_rules("nephro","nephro",);
+			$this->form_validation->set_rules("nephro","nephro");
 			$this->form_validation->set_rules("dateDiag","dateDiag");
 			$this->form_validation->set_rules("dateDebut","dateDebut");
 			$this->form_validation->set_rules("hist","hist");
@@ -130,8 +137,12 @@
 				);
 
 				if ($this->model_Observation->AjoutConsultation($dataa)){
+
+					echo json_encode(array('success' => true,'last_id' => $last_id));
+
 					$this->session->set_flashdata("message","la consultation a été ajouté");
-					return redirect(base_url()."index.php/Affichage/affichListMod");
+
+					return redirect(base_url()."index.php/observation/afficheConsultation");
 				} 
 				else 
 				{
@@ -139,7 +150,7 @@
 				}
 
 				//return redirect(base_url()."abonne/ajouAbonne");
-				return redirect(base_url()."index.php/Affichage/affichListMod");
+				return redirect(base_url()."index.php/observation/afficheConsultation");
 			} 
 			else {
 				$this->AjoutObs();// MISEJ+HO L ERREUUR menamena
@@ -250,7 +261,6 @@
 				return redirect(base_url()."index.php/Affichage/affichListMod");
 			}	
 		}
-
 		
 		
 		//supprimer une Observation

@@ -3,6 +3,18 @@
 	class model_stock extends CI_Model
 	{
 		
+		//affichage n stock
+		public function stock()
+		{
+			
+			$sql = "SELECT medicament.*,medicamententree.*,medicamentsortie.*,(medicament.nbrDetail + medicamententree.qteEntree - medicamentsortie.qteSortie) 
+					AS stock FROM medicament INNER JOIN medicamententree ON medicamententree.medicament_id = medicament.idMedicament 
+					INNER JOIN medicamentsortie ON medicamentsortie.medicament_id = medicament.idMedicament 
+                    ";
+			$stock = $this->db->query($sql);
+			return $stock->result();
+
+		}
 
 		public function AffichageStock()
 		{
@@ -32,9 +44,9 @@
 		
 
 		//supprimer une stock 
-		public function suppStock($id)
+		public function suppStock($idSt)
 		{
-			return $this->db->delete('stock',['id' => $id]);
+			return $this->db->delete('stock',['idSt' => $idSt]);
 		}
 	}
 

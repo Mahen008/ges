@@ -18,7 +18,7 @@
                     </h1>
                     <h4 class="text-center card-title">RECEPTIONNISTE</h4>
                     <h6 class="text-uppercase text-center text-muted card-subtitle mb-2">RESPONSABLE ACCUEIL</h6>
-                    <a href="<?php echo base_url();?>index.php/Frontend/acceuil" class="btn btn-secondary btn-lg btn-block">Commencer</a>
+                    <a href="<?php echo base_url();?>" class="btn btn-secondary btn-lg btn-block">Commencer</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                     </h1>
                     <h4 class="text-center card-title">DIALYSE</h4>
                     <h6 class="text-uppercase text-center text-muted card-subtitle mb-2">SCEANCE DE DIALYSE</h6>
-                    <a href="<?php echo base_url();?>index.php/Affichage/affichListMod" class="btn btn-secondary btn-lg btn-block">Commencer</a>
+                    <a href="<?php echo base_url();?>" class="btn btn-secondary btn-lg btn-block">Commencer</a>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                     </h1>
                     <h4 class="text-center card-title">CHIMIOTHERAPIE</h4>
                     <h6 class="text-uppercase text-center text-muted card-subtitle mb-2">SCEANCE DE CHIMIOTHERAPIE</h6>
-                    <a href="<?php echo base_url();?>index.php/welcome/login_admin" class="btn btn-secondary btn-lg btn-block">Commencer</a>
+                    <a href="<?php echo base_url();?>" class="btn btn-secondary btn-lg btn-block">Commencer</a>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
                     </h1>
                     <h4 class="text-center card-title">STOCK</h4>
                     <h6 class="text-uppercase text-center text-muted card-subtitle mb-2">GESTION DE STOCK</h6>
-                    <a href="<?php echo base_url();?>index.php/stock/affichStock" class="btn btn-secondary btn-lg btn-block">Commencer</a>
+                    <a href="<?php echo base_url();?>" class="btn btn-secondary btn-lg btn-block">Commencer</a>
                 </div>
             </div>
         </div>
@@ -68,10 +68,24 @@
                     </h1>
                     <h4 class="text-center card-title">CONSULTATION</h4>
                     <h6 class="text-uppercase text-center text-muted card-subtitle mb-2">CONSULTATION GENERALISTE</h6>
-                    <a href="<?php echo base_url();?>index.php/welcome/login_admin" class="btn btn-secondary btn-lg btn-block">Commencer</a>
+                    <a href="<?php echo base_url();?>" class="btn btn-secondary btn-lg btn-block">Commencer</a>
                 </div>
             </div>
         </div>
+        <div class="col">
+            <div class="card" style="width: 60%; height: 90%; margin: auto;">
+                <div class="card-body">
+                    <h1 class="text-center">
+                        <img src="<?php echo base_url("assets/img/admin_settings_male.png");?>" class="rounded-circle" height="100" />
+                    </h1>
+                    <h4 class="text-center card-title">ADMINISTRATEUR</h4>
+                    <h6 class="text-uppercase text-center text-muted card-subtitle mb-2">GESTION D'UTILISATEUR</h6>
+                    <a href="<?php echo base_url();?>" class="btn btn-secondary btn-lg btn-block">Commencer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+        
     </div>
 </div>
 <?php include("include/footer.php");?>

@@ -15,7 +15,9 @@
 		{
 			
 			$affichPat = $this->model_Patient->AffichagePatient();
-			$this->load->view('affichPatient',['affichPat' => $affichPat]);
+			$patients = $this->model_Patient->CountPatient();
+
+			$this->load->view('affichPatient',['affichPat' => $affichPat, 'patients' => $patients]);
 		}
 
 		//ajout
@@ -30,7 +32,7 @@
 			$this->form_validation->set_rules("phone","Téléphone","required");
 			$this->form_validation->set_rules("phonepro","Téléphone du proche","required");
 			$this->form_validation->set_rules("Consultation","Consulter");
-			
+			$this->form_validation->set_rules("type","type de scéance");
 
 			$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 
@@ -44,7 +46,11 @@
 					"phone" => $this->input->post("phone"),
 					//"Libelle" => $this->input->post("libelarticl"),
 					"phoneProche" => $this->input->post("phonepro"),
-					"consulter"=>json_encode(implode(",",$consulter))
+
+					// tsy mety n implode 
+					"consulter"=>json_encode(implode(",",$consulter)),
+					// "consulter" => $this->input->post("consulter"),
+					"type" => $this->input->post("type")
 				);
 
 				if ($this->model_Patient->insererPatient($data)) {
@@ -56,7 +62,6 @@
 				}
 
 			}
-
 			else
 			{
 				$msg = "probleme de validation formulaire";
@@ -83,7 +88,7 @@
 			$this->form_validation->set_rules("adress","adresse","required");
 			$this->form_validation->set_rules("phone","Téléphone","required");
 			$this->form_validation->set_rules("phonepro","Téléphone du proche","required");
-			$this->form_validation->set_rules("consulter","Consultation");
+			$this->form_validation->set_rules("type","type de scéance");
 
 			$this->form_validation->set_error_delimiters('<div class="text-danger">','</div>');
 
@@ -98,11 +103,11 @@
 					//"Libelle" => $this->input->post("libelarticl"),
 					"phoneProche" => $this->input->post("phonepro"),
 					// "consulter"=>json_encode(implode(",",$consulter))
-					"consulter" => $this->input->post("consulter")
+					"type" => $this->input->post("type")
 				);
 
-				var_dump($data);
-				exit();
+				// var_dump($data);
+				// exit();
 
 				if ($this->model_Patient->updatePatient($id,$data)) {
 					return redirect(base_url()."index.php/Patient/affichPatient");
@@ -120,12 +125,45 @@
 			}
 		}
 
+		public function user_action()
+		{
+
+			// if( isset( $_POST["action"]) ) 
+			// { 
+				$data = [
+					'consulter' => $this->input->post('consulté')
+				];
+
+				$this->model_Patient->updatePatient($this->input->post("patient_id"),$data);
+
+				redirect(base_url()."index.php/Observation/afficheConsultation");
+
+				// echo "salama aby";
+			// }
+		}
+
 		//supprimer une Patient
 		public function deletePatient($id)
 		{
 			if ($this->model_Patient->suppPatient($id)) {
-				return redirect("index.php/Patient/affichPatient");
+				return redirect("Patient/affichPatient");
 			}
 		}
+
+		// public function affichPatients()
+		// {
+			
+		// 	$NbPat = $this->model_Patient->CountPatient();
+		// 	$this->load->view('index',['NbPat' => $NbPat]);
+		// }
+
+		// public function affichAttend()s
+		// {
+			
+		// 	$NbAtt = $this->model_Patient->Countattend();
+		// 	// var_dump($NbAtt);
+		// 	// exit();
+		// 	$this->load->view('index',['NbAtt' => $NbAtt]);
+		// }
 	}
 ?>

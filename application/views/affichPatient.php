@@ -37,7 +37,7 @@
 
 		                      <div class="modal-header">
 
-		                        <h5 class="modal-title" id="exampleModalLongTitle" >Ajouter un nouveau patient</h5>
+		                        <h5 class="modal-title" id="exampleModalLongTitle" ><b>AJOUTER UN NOUVEAU PATIENT</b></h5>
 		                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		                          <span aria-hidden="true">&times;</span>
 		                        </button>
@@ -105,6 +105,15 @@
 												
 									  			<span class="text-danger"><?php echo form_error("consulter");?></span>
 			                            	</div>
+			                            	<div class="col-md-6 mb-3">
+				                                <label>type de scéance</label>
+				                                <select class="form-control" name="type">
+									        		<option value="Dialyse">Dialyse</option>
+									        		<option value="Chimiotherapie">Chimiothérapie</option>
+									        		<option value="ConsultationGen">Consultation généraliste</option>
+									        	</select>
+				                                <span class="text-danger"><?php echo form_error("type");?></span>
+			                            	</div>
 
 			                            </div>
 
@@ -134,6 +143,7 @@
 		                            <th>Numero téléphone</th>
 		                            <th>Numero téléphone du proche</th>
 		                            <th>Consultation</th>
+		                            <th>type de scéance</th>
 		                            <th>Actions</th>
 		                        </tr>
 		                    </thead>
@@ -145,8 +155,9 @@
 				                     
 				                            <td><img width="28" height="28" src="<?php echo base_url()?>assets/img/user.jpg" class="rounded-circle m-r-5" alt=""><?php echo $pe->nom; ?></td>
 				                            <td><?php echo $pe->prenom; ?></td>
-				                            <td><?php echo $pe->adresse; ?></td>
 				                            <td><?php echo $pe->DDN; ?></td>
+				                            <td><?php echo $pe->adresse; ?></td>
+				                            
 				                            <td><?php echo $pe->phone; ?></td>
 				                            <td><?php echo $pe->phoneProche; ?></td>
 
@@ -156,7 +167,7 @@
 				                            	<td><span class="custom-badge status-red">En attente</span></td>
 				                            <?php endif ?>
 
-				                            <!-- <td><?php echo $pe->consulter; ?></td> -->
+				                            <td><?php echo $pe->type; ?></td>
 				                            <td>
 				                                <div class="dropdown">
 													<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1em;">

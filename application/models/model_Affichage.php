@@ -13,6 +13,14 @@
 
 			$affichCon = $this->db->query("SELECT patient.*,observation.* FROM patient INNER JOIN observation ON observation.idPatient = patient.id");
 			return $affichCon->result();
+			// $affichCon = $this->db->query("SELECT * FROM patient WHERE patient.type = 'Dialyse'");
+			// return $affichCon->result();
+		}
+		public function affichNonCon()
+		{
+			$affichPatNon = $this->db->query("SELECT id,nom,prenom FROM `patient` WHERE consulter = '0'");
+			return $affichPatNon->result();
+			
 		}
 
 		// public function affichConModif()

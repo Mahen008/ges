@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>affichListFicheMed</title>
+		<title>affichObservation</title>
 		
 	</head>
 <body>
@@ -13,15 +13,20 @@
 	<div class="page-wrapper">
 		<!-- debut wrapper -->
 		<div>
-			
+
 			<!-- contenu de la page-->
 			<div id="page-content-wrapper" >
+           
 	           <!-- debut card-->
 	            <div class="card">
 
 	                <div class="card-header" style="background-color: #ecefed; height: 50px;">
-	                    <h2 align="center" style="color: #000;font-size: 1.5em;">FICHE MEDICALE DES PATIENTS </h2>
+	                    <h2 align="center" style="color: #000;font-size: 1.5em;">LISTE DES PATIENTS à CONSULTER</h2>
 	                </div>
+
+	                <div class="col-sm-8 col-9 text-right m-b-20" style="margin-left: 30%; margin-top: 10px;">
+                        <a href="<?php echo base_url()?>index.php/Observation/AjoutObs" class="btn btn btn-primary btn-rounded float-right active"><i class="fa fa-plus"></i>Add Consultation</a>
+                    </div>
 	                <!-- debut card body-->
 	                <div class="card-body">
 	                	<!-- debut container-fluid-->
@@ -40,19 +45,17 @@
 			                    </thead>
 			                    <tbody>
 
-			                    		<?php foreach($affichCon as $al):?>
-					                        <tr>
-					                      
-					                            <td><img width="28" height="28" src="<?php echo base_url()?>assets/img/user.jpg" class="rounded-circle m-r-5" alt=""><?php echo $al->nom; ?></td>
-					                            <td><?php echo $al->prenom; ?></td>
-					                           
-					                            <td>
-			                                		<div>
-													    <a href="<?php echo base_url()?>index.php/Affichage/ficheMedical/<?php echo $al->id; ?>" class="btn btn-success" role="button" style="font-size: 1em;"><i class="fa fa-eye"></i> Voir</a>
-													</div>
-					                            </td>
-					                        </tr>
-				                    	<?php endforeach;?>
+		                    		<?php foreach($affichCo as $pe):?>
+				                        <tr>
+				                      
+				                            <td><img width="28" height="28" src="<?php echo base_url()?>assets/img/user.jpg" class="rounded-circle m-r-5" alt=""><?php echo $pe->nom; ?></td>
+				                            <td><?php echo $pe->prenom; ?></td>
+				                           
+				                            <td>
+												<button type="submit"></button>
+				                            </td>
+A				                        </tr>
+			                    	<?php endforeach;?>
 				                        
 		                    </tbody>
 
@@ -67,7 +70,7 @@
         	</div>
 			<!-- fin du contenu de page-->
 		</div>
-		<!-- fin wrapalr -->
+		<!-- fin wrapper -->
 	</div>
 	<?php include("include/footer.php");?>
 </body>

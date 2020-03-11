@@ -3,6 +3,7 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="menu-title" style="margin-left: 60px; font-size: 1.4em; color: #000;margin-top: 15px;"><b>MENU</b></li>
+                        <br><br>
                         <li>
                             <a href="<?php echo base_url()?>index.php/Frontend/acceuil"><b><i class="fa fa-dashboard"></i></b> <span>Tableau de bord</span></a>
                         </li>
@@ -11,11 +12,13 @@
                             <a href="<?php echo base_url()?>index.php/patient/affichPatient"><b><i class="fa fa-wheelchair"></i></b> <span>Patients</span></a>
                         </li>
 
-                         <li><a href="<?php echo base_url()?>index.php/Observation/AjoutObs"><i class="fa fa-plus"></i> Ajout patient </a></li>
+                         <!-- <li>
+                            <a href="<?php echo base_url()?>index.php/patient/affichPatient"><b><i class="fa fa-plus"></i></b> <span>Ajout patient </span></a>
+                        </li> -->
 
-                        <li>
-                            <a href="<?php echo base_url()?>index.php/Observation/affichListPat"><b><i class="fa fa-calendar"></i></b> <span>Paiement</span></a>
-                        </li>
+                        <!-- <li>
+                            <a href="<?php echo base_url()?>index.php/Paiement/affichPaiement"><b><i class="fa fa-calendar"></i></b> <span>Paiement</span></a>
+                        </li> -->
 
                         <!-- <li class="submenu">
                             <a href="#"><i class="fa fa-user-md"></i> <span> Stock Médicament </span> <span class="menu-arrow"></span></a>

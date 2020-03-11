@@ -11,27 +11,18 @@
            
             <li class="nav-item dropdown has-arrow">
                 <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                    <span class="user-img">
-    					<img class="rounded-circle" src="<?php echo base_url()?>assets/img/user.jpg" width="24" alt="Admin">
-    					<span class="status online"></span>
-    				</span>
-    				<span>Admin</span>
+                    <!-- <span class="user-img">
+                        <img class="rounded-circle" src="<?php echo base_url()?>assets/img/user.jpg" width="24" alt="Admin">
+                        <span class="status online"></span>
+                    </span> -->
+                    <span>Quitter</span>
                 </a>
     			<div class="dropdown-menu">
-    				<a class="dropdown-item" href="profile.html">My Profile</a>
-    				<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-    				<a class="dropdown-item" href="settings.html">Settings</a>
-    				<a class="dropdown-item" href="<?php echo base_url()?>index.php/Frontend/login">Logout</a>
+    				<!-- <a class="dropdown-item" href="profile.html">My Profile</a>
+    				<a class="dropdown-item" href="edit-profile.html">Edit Profile</a> -->
+    				<a class="dropdown-item" href="<?php echo base_url()?>index.php/Home/home">Acceuil</a>
+    				<a class="dropdown-item" href="<?php echo base_url()?>index.php/Welcome/logout">Logout</a>
     			</div>
             </li>
         </ul>
-        <div class="dropdown mobile-user-menu float-right">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-            <div class="dropdown-menu dropdown-menu-right">
-                <a class="dropdown-item" href="profile.html">My Profile</a>
-                <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-                <a class="dropdown-item" href="settings.html">Settings</a>
-                <a class="dropdown-item" href="login.html">Logout</a>
-            </div>
-        </div>
     </div> 

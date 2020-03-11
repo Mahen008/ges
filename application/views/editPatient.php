@@ -59,19 +59,23 @@
 					<span class="text-danger"><?php echo form_error("phonepro");?></span>
 				</div>
 
-				<div class="form-check">
-					<label>Consultation</label>
-					<label class="custom-control custom-checkbox">OUI
-					  <input type="radio" checked="checked" name="consulter[]" value="1">
-					  <span class="checkmark"></span>
-					</label>
-					<label class="custom-control custom-checkbox">NON
-					  <input type="radio" name="consulter[]" value="0">
-					  <span class="checkmark"></span>
-					</label>
-		  			<span class="text-danger"><?php echo form_error("consulter");?></span>
+				<div class="form-group">
+					<label>Type de séance</label>
+				    <select class="form-control" name="type">
+						<option value="<?php echo set_value('type',$unPatient->type);?>"><?php echo $unPatient->type;?></option>
+		        		<option value="Dialyse">Dialyse</option>
+		        		<option value="Chimiotherapie">Chimiothérapie</option>
+		        		<option value="ConsultationGen">Consultation généraliste</option>
+		        	</select>
+					<span class="text-danger"><?php echo form_error("type");?></span>
+				</div>
+
+
+					
+					
+				
                  	
-                </div><br>
+                <br>
 
 				<button type="submit" class="btn btn-success">Modifier</button>
 				<a href="<?php echo base_url()?>index.php/Patient/affichPatient" class="btn btn-primary">Retour</a>
@@ -82,5 +86,6 @@
 		<!-- </div> -->
 	</div>
 	<?php include("include/footer.php");?>
+	
 </body>
 </html>

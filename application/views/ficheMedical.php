@@ -29,17 +29,19 @@
 <body>
 	<?php include("include/header.php");?>
 	<?php include("include/headerApp.php");?>
-	<?php include("include/sidebarDial.php");?>
+	
 	<div class="page-wrapper" id="">
             <div class="content">
                 <div class="row">
                     <div class="col-sm-5 col-4">
-                        <h4 class="page-title">Fiche Medical</h4>
+
+                        
                     </div>
                     <div class="col-sm-7 col-8 text-right m-b-30">
                         <div class="btn-group btn-group-lg">
                             <!-- <button class="btn btn-white">CSV</button> -->
-                            <button class="btn btn-outline-danger" onclick='window.print();'><i class="fa fa-print fa-lg"></i> PDF</button>
+                            <button class="btn btn-outline-secondary" onclick='window.print();'><i class="fa fa-print"></i> PDF</button>
+                            <a class="btn btn-outline-danger" href="<?php echo base_url()?>index.php/Affichage/affichListFicheMed"><i class="fa fa-times"></i></a>
                             <!-- <button class="btn btn-white"> Print</button> -->
                         </div>
                     </div>
@@ -62,7 +64,7 @@
                                     <div class="invoice-details">
                                         <h3 class="text-uppercase">fiche medicale</h3>
                                         <ul class="list-unstyled">
-                                            <li>Fiche Mois: <span>Janvier, 2020</span></li>
+                                            <li>Fiche Mois: <span>Mars, 2020</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -282,8 +284,7 @@
         </div>
 
 
-					  <button type="" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span>Ajouter</button>
-						<a href="<?php echo base_url()?>index.php/Affichage/affichListFicheMed" class="btn btn-success"><span class="glyphicon glyphicon-step-backward"></span> Retour</a>
+					 
 						
 				  
 			  			
